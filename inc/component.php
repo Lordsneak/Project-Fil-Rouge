@@ -1,0 +1,6 @@
+<?php
+fuction component() {
+    $element= "
+    
+    ";
+}
