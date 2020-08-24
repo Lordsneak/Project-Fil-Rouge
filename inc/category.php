@@ -7,12 +7,14 @@
                     </section>
                     <div class="category00 border">
                         <!-- List Catégory -->
-                        <p> <a href=""><i class="fa fa-mobile " aria-hidden="true"></i> &nbsp; Phones & Accessories</a>
-                        </p>
-                        <p> <a href=""><i class="fa fa-television" aria-hidden="true"></i> &nbsp; Electronics &
-                                Application</a></p>
-                        <p> <a href=""><i class="fa fa-tablet" aria-hidden="true"></i> &nbsp; Comptures & Tablets</a>
-                        </p>
-                        <p> <a href=""><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp; Office Products</a></p>
+                        <?php 
+                                $query = "SELECT * FROM category";
+                                $result = query($query);
+                                while($row = fetch_array($result)):
+                        ?>
+                        <p> <a href="category.php?id=<?php echo $row['id'];?>"><i class="<?php echo $row['category_icon'];?>" aria-hidden="true"></i> &nbsp; <?php echo $row['category_name'];?></a></p>
+                        <?php 
+                                endwhile;
+                            ?>
                     </div>
-              
+                                        

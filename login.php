@@ -1,7 +1,25 @@
+<?php include('inc/fonctions.php'); ?>
+<?php 
+                            if(isset($_POST['login'])){
+                                $username = escape_string($_POST['username']);
+                                $password = escape_string(sha1($_POST['password']));
+                                $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
+                                $result = query($sql);
+                                $user = fetch_array($result);
+                                if($user != null){
+                                    $_SESSION['logged'] = true;
+                                    $_SESSION['username'] = $user['username'];
+                                    $_SESSION['id'] = $user['id'];
+                                    redirect("admin/index.php");
+                                }else{
+                                    echo '<div class="alert alert-danger mt-2">Incorrect username or password. </div>';
+                                }
+                            }   
+                        ?>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Login</title>
+    <title>Hibamall.ma - Login</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +42,7 @@
       <section class="container-fluid">
         <section class="row justify-content-center">
           <section class="col-md-10 col-xl-5 col-lg-6 col-sm-10 mx-auto text-center form">
-            <form class="form-container" action="" name="" method="">
+            <form class="form-container" action="login.php" method="POST">
               <div class="form-group">
                 <h1>Sign in</h1>
                 <p>Welcome to Hibamall</p>
@@ -42,7 +60,7 @@
               
               <a href="recovery.php">Password Forgot ?</a>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+              <button type="submit" name="login" class="btn btn-primary btn-block">Sign in</button>
             </form>
           </section>
         </section>

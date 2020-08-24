@@ -1,3 +1,4 @@
+<?php include('inc/fonctions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/product.css">
+    <link rel="stylesheet" href="asset/css/product-details.css">
+
 
 </head>
 
@@ -32,8 +35,10 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-12" >
-                <a href="/hibamall/"> <img class="mylogo" src="asset/img/logo.png" alt="Hibamall"></a>
+                <div class="col-md-3 col-dm-6 my-3 my-md-0" >
+                <div class="mylogo">
+                                <a href="/hibamall/"> <img class="" src="asset/img/logo.png" alt="Hibamall"></a>
+                </div>
                     <!-- Header with Logo -->
                 </div>
                 <div class="col-md-6">
@@ -52,10 +57,20 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="cart.php"> X Product </a>
                         </div>
-                        <a href="dashboard.php"> <i class="fa fa-user" aria-hidden="true"></i> My Account <i
-                                class="fa fa-caret-down" aria-hidden="true"></i></a>
+                        <?php
+          if(!isset($_SESSION["username"])){
+            echo ' <a href="login.php"> <i class="fa fa-user" aria-hidden="true"></i> Sign in </a>';
+          }else {
+            echo '<a href="logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Sign Out </a>';
+          }
+        ?>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+   

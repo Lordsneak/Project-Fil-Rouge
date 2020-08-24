@@ -1,0 +1,1 @@
+$sql = "INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `email`) VALUES (NULL, '$fullname', '$user', '$pass', '$email')";

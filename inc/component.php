@@ -1,6 +1,0 @@
-<?php
-fuction component() {
-    $element= "
-    
-    ";
-}

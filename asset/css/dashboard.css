@@ -1,0 +1,20 @@
+
+.aside {
+    background-color: #ffffff;
+    height: 120vh;
+    border: #d3d3cc 1px solid;
+    
+}
+.aside img{
+    margin-left: 60px;
+}
+.aside h5{
+    padding-bottom: 10px;
+}
+
+.aside button{
+    display: block;
+    margin-left: 35px;
+    background-color: #352E80;
+    border-radius: 20px;
+}

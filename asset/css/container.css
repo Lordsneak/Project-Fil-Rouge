@@ -1,0 +1,15 @@
+.dashboard-list {
+
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 11px;
+    box-shadow: 0px 0px 2px 0px #000;
+}
+.dashboard-list form {
+    position: relative;
+    float: right;
+}
+.dashboard-list h5 form {
+    padding-bottom: 20PX;
+}

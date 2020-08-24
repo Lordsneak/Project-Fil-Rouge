@@ -1,7 +1,23 @@
+<?php include('inc/fonctions.php'); ?>
+<?php 
+                            if(isset($_POST['register'])){
+                                $username = escape_string($_POST['username']);
+                                $email = escape_string($_POST['email']);
+                                $password = escape_string(sha1($_POST['password']));
+                                $fullname = escape_string($_POST['fullname']);
+                                $sql = "INSERT INTO users VALUES ('','$fullname','$username','$password','$email')";
+                                if(query($sql)){
+                                    echo '<div class="alert alert-success mt-2">Account Created.</div>';
+                                }else{
+                                    echo '<div class="alert alert-danger mt-2">Fail to create account</div>';
+                                }
+                            }   
+                        ?>
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Login</title>
+    <title>Hibamall.ma - Register</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,30 +39,27 @@
       <section class="container-fluid">
         <section class="row justify-content-center">
           <section class="col-md-10 col-xl-5 col-lg-6 col-sm-10 mx-auto text-center form">
-            <form class="form-container" action="" name="" method="">
+            <form class="form-container" action="register.php" method="POST">
               <div class="form-group">
                 <h1>Register Account</h1>
     <br>
                 <input type="text" class="form-control" name="username" placeholder="Username">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username">
+                <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username">
+                <input type="email" class="form-control" name="email" placeholder="Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username">
+                <input type="text" class="form-control" name="fullname" placeholder="Full Name">
               </div>
-              <hr>
-              <div class="form-group">
-              <a href="register.php">New to Hibamall ? Create Account</a>
-              </div>
+
               <div class="form-group">
               
               <a href="recovery.php">Password Forgot ?</a>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+              <button type="submit" name="register" class="btn btn-primary btn-block">Create</button>
             </form>
           </section>
         </section>
