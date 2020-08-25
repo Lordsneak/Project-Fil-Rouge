@@ -6,17 +6,28 @@
                                 $annance_image = escape_string($_POST['annance_image']);
                                 $sql = "INSERT INTO annance VALUES ('','$annance_nom','$annance_image')";
                                 if(query($sql)){
-                                    echo '
-                                    <script type="text/javascript">
-                                    alert("Annance Added.");
-                                    window.location = "annance.php";
-                                </script>';
+                                    echo "
+                                    <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Annance Ajouté',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      }).then(function() {
+                                        window.location = 'annance.php';
+                                    });
+                                    </script>
+                                ";
                                 }else{
-                                    echo 'Fail to create Annance
-                                    <script type="text/javascript">
-                                    alert("Fail to create Annance .");
-                                    window.location = "addannance.php";
-                                </script>';
+                                    echo "<script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Annance Pas Ajouté ',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      })
+                                    window.location = 'addannance.php';
+                                </script>";
                                 }
                             }   
                         ?>

@@ -1,10 +1,12 @@
 <?php include('inc/header.php'); ?>
-<?php
-					$id = escape_string($_GET['id']);
-                    $query = "SELECT * FROM category WHERE id = '$id'";
-                    $result = query($query);
-                    $row = fetch_array($result);
-                	?>
+<?php 
+                                    $search = isset($_POST['search']) ? escape_string($_POST['search']) : ""; 
+                                    $sql = "SELECT * FROM  products WHERE id LIKE '%$search%'
+                                                OR product_description LIKE '%$search%'";
+                                    $result = query($sql);
+                                    if($count = mysqli_num_rows($result) > 0):
+                                        while($row = fetch_array($result)):
+                                ?>
 <div class="menubarcategory text-left">
         <p class="category-top">
         <a href="">Home</a>
@@ -13,7 +15,7 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
         </p>
         <p class="category-top">
-        <a href=""><?php echo $row['category_name'];?></a>
+        <a href="">Phones & Accessories</a>
         </p>
 </div>
 
@@ -27,15 +29,6 @@
             <p class="pull-right">1/1</p>
         </div>
         <div class="row product-3 mx-auto">
-
-        
-
-        <?php
-
-                            $query = "SELECT * FROM products WHERE category_id='$id'";
-                            $result = query($query);
-                            while($row = fetch_array($result)):
-                            ?>
                       <div class="col-md-4 col-dm-6 my-3 my-md-0">      
             
                       <form action="" method="post">
@@ -67,8 +60,14 @@
                       </form>
                   </div>
                   <?php 
-                                endwhile;
-                            ?>
+                                    endwhile;
+                                    else:
+                                ?>
+                                <div class="alert alert-info mt-2 mx-auto">Aucun produit trouvé.</div>
+                                <?php 
+                                    endif;
+                                ?>
+                            </div>
                   </div> 
 
 </div>

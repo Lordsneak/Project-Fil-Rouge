@@ -6,17 +6,28 @@
                                 $category_icon = escape_string($_POST['category_icon']);
                                 $sql = "INSERT INTO category VALUES ('','$category_name','$category_icon')";
                                 if(query($sql)){
-                                    echo '
-                                    <script type="text/javascript">
-                                    alert("Category Added.");
-                                    window.location = "category.php";
-                                </script>';
+                                    echo  "
+                                    <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Category Ajouté',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      }).then(function() {
+                                        window.location = 'category.php';
+                                    });
+                                    </script>
+                                ";
                                 }else{
-                                    echo '
-                                    <script type="text/javascript">
-                                    alert("Fail to create Category .");
-                                    window.location = "addcategory.php";
-                                </script>';
+                                    echo "<script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Annance Pas Ajouté',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      })
+                                    window.location = 'addcategory.php';
+                                </script>";
                                 }
                             }   
                         ?>

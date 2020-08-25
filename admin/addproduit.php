@@ -19,17 +19,28 @@
                                 $promo = escape_string($_POST['promo']);
                                 $sql = "INSERT INTO products VALUES ('','$product_name','$product_fullname','$product_image','$product_description','$product_price','$product_oldprice','$color1','$color2','$color3','$product_smallimage1','$product_smallimage2','$product_smallimage3','$product_smallimage4','$category_id','$promo')";
                                 if(query($sql)){
-                                    echo '
-                                    <script type="text/javascript">
-                                    alert("Produit Added.");
-                                    window.location = "produit.php";
-                                </script>';
+                                    echo  "
+                                    <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Produit Ajouté',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      }).then(function() {
+                                        window.location = 'produit.php';
+                                    });
+                                    </script>
+                                ";
                                 }else{
-                                    echo '
-                                    <script type="text/javascript">
-                                    alert("Fail to create Produit .");
-                                    window.location = "addproduit.php";
-                                </script>';
+                                    echo "<script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Produit Pas Ajouté ',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                      })
+                                    window.location = 'addproduit.php';
+                                </script>";
                                 }
                             }   
                         ?>

@@ -43,7 +43,9 @@
                               <i class="fa fa-star" aria-hidden="true"></i>
                               <i class="fa fa-star-o" aria-hidden="true"></i>
                               </div>
-                            <br>                              
+                            <br>        
+                            <small><s class="text-danger">Old price:$<?php echo $row['product_oldprice'];?></s></small>   
+                            <br>                   
                               <span class="price">Price: $ <?php echo $row['product_price'];?></span>
                               <br>
                               <hr>

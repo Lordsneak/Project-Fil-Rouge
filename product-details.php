@@ -41,7 +41,7 @@
                 <option><?php echo $row['color2'];?></option>
                 <option><?php echo $row['color3'];?></option>
             </select>
-                <label>QTY : <input class="input-group w-50" type="number"> </label>
+                <label>QTY : <input class="input-group w-75" type="number" min="1" max="5"> </label>
                 <br>
                 <h6 for="">Price : $ <?php echo $row['product_price'];?></h6>
                 <a href=""><button class="btn btn-transparent border-dark"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp; Add to cart</button></a>

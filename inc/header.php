@@ -44,8 +44,10 @@
                 <div class="col-md-6">
                     <!-- Search Bar -->
                     <div class="search-bar">
-                        <input class="form-control active-cyan-4 mb-4" type="text" placeholder="I'm Looking for ..."
+                    <form action="search.php" method="POST">
+                        <input class="form-control active-cyan-4 mb-4" name="search" type="text" placeholder="I'm Looking for ..."
                             aria-label="Search">
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-3">

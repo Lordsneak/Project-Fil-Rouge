@@ -14,7 +14,6 @@
 
             <form action="#" method="POST">
                 <input type="hidden" name="id" />
-                
                 <div class="form-group">
                     <label for="">Nom Produit :</label>
                     <input type="text" class="form-control" name="product_name" id="recipient-name" value="<?php echo $row['product_name'];?>">
@@ -27,19 +26,19 @@
                 <input type="text" class="form-control" name="product_image" id="recipient-name" value="<?php echo $row['product_image'];?>">
         </div>
         <div class="form-group">
-            <label for="">Description :</label>
+            <label >Description :</label>
             <textarea type="text" class="form-control" name="product_description" id="recipient-name"><?php echo $row['product_description'];?></textarea>
         </div>
         <div class="form-group">
-            <label for="">Price :</label>
+            <label >Price :</label>
             <input type="text" class="form-control" name="product_price" id="recipient-name" value="<?php echo $row['product_price'];?>">
         </div>
         <div class="form-group">
-            <label for="">Old Price :</label>
+            <label >Old Price :</label>
             <input type="text" class="form-control" name="product_oldprice" id="recipient-name" value="<?php echo $row['product_oldprice'];?>">
         </div>
         <div class="form-group">
-            <label for="">Small Image 1 :</label>
+            <label >Small Image 1 :</label>
             <input type="text" class="form-control" name="product_smallimage1" id="recipient-name" value="<?php echo $row['product_smallimage1'];?>">
         </div>
         <div class="form-group">
@@ -110,7 +109,7 @@
         $product_smallimage4 = $_POST['product_smallimage4'];
         $category_id = escape_string($_POST['category_id']);
         $promo = escape_string($_POST['promo']);
-        $query = "UPDATE products SET product_name = '$product_name','$product_fullname', product_image='$product_image', product_description ='$product_description', product_price='$product_price', product_oldprice='$product_oldprice', product_smallimage1='$product_smallimage1', product_smallimage2='$product_smallimage2', product_smallimage3='$product_smallimage3', product_smallimage4='$product_smallimage4', color1='$color1', color2='$color2', color3='$color3', category_id='$category_id',promo='$promo' WHERE id = '$id'";
+        $query = "UPDATE products SET product_name='$product_name','$product_fullname', product_image='$product_image', product_description ='$product_description', product_price='$product_price', product_oldprice='$product_oldprice', product_smallimage1='$product_smallimage1', product_smallimage2='$product_smallimage2', product_smallimage3='$product_smallimage3', product_smallimage4='$product_smallimage4', color1='$color1', color2='$color2', color3='$color3', category_id='$category_id',promo='$promo' WHERE id = '$id'";
                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
             <script type="text/javascript">
