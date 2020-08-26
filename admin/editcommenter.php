@@ -13,16 +13,22 @@
 
     <?php
       if(isset($_POST['submit'])){
-        $commonter_name = $_POST['commonter_name'];
-        $email = $_POST['email'];
-        $commonter_subject = $_POST['commonter_subject'];
-        $query = "UPDATE commenter SET commonter_name = '$commonter_name', email='$email', commonter_subject ='{$commonter_subject}' WHERE id = '$id'";
-                    $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+        $commonter_name = escape_string($_POST['commonter_name']);
+        $email = escape_string($_POST['email']);
+        $commonter_subject = escape_string($_POST['commonter_subject']);
+        $query = "UPDATE commenter SET commonter_name='$commonter_name', email='$email', commonter_subject='$commonter_subject' WHERE id='$id'";
+        $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
-                     <script type="text/javascript">
-            alert("Update Successfull.");
-            window.location = "commenter.php";
-        </script>
+                     <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Commenter Modifier !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                      }).then(function() {
+                                        window.location = 'commenter.php';
+                                    });
+                                    </script>
         <?php
              }               
 ?> 

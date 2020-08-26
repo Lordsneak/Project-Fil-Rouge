@@ -18,10 +18,16 @@
         $query = "UPDATE category SET category_name = '$category_name', category_icon='$category_icon' WHERE id = '$id'";
                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
-                     <script type="text/javascript">
-            alert("Update Successfull.");
-            window.location = "category.php";
-        </script>
+                     <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Category Modifie !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                      }).then(function() {
+                                        window.location = 'category.php';
+                                    });
+                                    </script>
         <?php
              }               
 ?> 

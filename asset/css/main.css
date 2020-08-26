@@ -142,6 +142,10 @@ a {
     border-radius: 10px;
     background: orange !important;
 }
+.addtocart-c a{
+    color: black;
+    font-weight: bold;
+}
 
 /* TEST*/
 

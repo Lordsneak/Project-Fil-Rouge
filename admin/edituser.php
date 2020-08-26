@@ -49,10 +49,16 @@
                       WHERE id = '$id'";
                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
-                     <script type="text/javascript">
-            alert("Update Successfull.");
-            window.location = "users.php";
-        </script>
+                                          <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'User Modifier !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                      }).then(function() {
+                                        window.location = 'users.php';
+                                    });
+                                    </script>
         <?php
              }               
 ?>  

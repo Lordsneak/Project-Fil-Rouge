@@ -8,6 +8,7 @@
                                 $product_description = escape_string($_POST['product_description']);
                                 $product_price = escape_string($_POST['product_price']);
                                 $product_oldprice = escape_string($_POST['product_oldprice']);
+                                $product_quantity = escape_string($_POST['product_quantity']);
                                 $color1 = escape_string($_POST['color1']);
                                 $color2 = escape_string($_POST['color2']);
                                 $color3 = escape_string($_POST['color3']);
@@ -17,7 +18,7 @@
                                 $product_smallimage4 = escape_string($_POST['product_smallimage4']);
                                 $category_id = escape_string($_POST['category_id']);
                                 $promo = escape_string($_POST['promo']);
-                                $sql = "INSERT INTO products VALUES ('','$product_name','$product_fullname','$product_image','$product_description','$product_price','$product_oldprice','$color1','$color2','$color3','$product_smallimage1','$product_smallimage2','$product_smallimage3','$product_smallimage4','$category_id','$promo')";
+                                $sql = "INSERT INTO products VALUES ('','$product_name','$product_fullname','$product_image','$product_description','$product_price','$product_oldprice','$product_quantity','$color1','$color2','$color3','$product_smallimage1','$product_smallimage2','$product_smallimage3','$product_smallimage4','$category_id','$promo')";
                                 if(query($sql)){
                                     echo  "
                                     <script>
@@ -75,6 +76,10 @@
         <div class="form-group">
             <label for="">Old Price :</label>
             <input type="text" class="form-control" name="product_oldprice" id="recipient-name">
+        </div>
+        <div class="form-group">
+            <label for="">QTY :</label>
+            <input type="number" class="form-control" name="product_quantity" id="recipient-name">
         </div>
         <div class="form-group">
             <label for="">Color 1</label>

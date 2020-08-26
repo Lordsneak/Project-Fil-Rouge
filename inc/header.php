@@ -57,7 +57,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i> Cart </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="cart.php"> X Product </a>
+                            <a class="dropdown-item" href="cart.php"> <a class="nav-link" href="products.php">Produits <span class="sr-only">(current)</span></a> </a> 
                         </div>
                         <?php
           if(!isset($_SESSION["username"])){

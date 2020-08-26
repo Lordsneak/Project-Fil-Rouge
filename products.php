@@ -48,7 +48,7 @@
                               <br>
                               <hr>
                               <div class="addtocart-b">
-                                <button class="btn btn-primary-outline"> <a href="product-details.php?id=<?php echo $row['id'];?>">Add to cart </a> </button>
+                                <button class="btn btn-primary-outline"> <a href="product-details.php?id=<?php echo $row['id'];?>">BUY NOW !  </a> </button>
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                               </div>
               

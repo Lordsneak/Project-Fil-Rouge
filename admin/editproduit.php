@@ -24,18 +24,22 @@
                 </div>
                 <label for=""> Link Image :</label>
                 <input type="text" class="form-control" name="product_image" id="recipient-name" value="<?php echo $row['product_image'];?>">
-        </div>
+                </div>
         <div class="form-group">
             <label >Description :</label>
             <textarea type="text" class="form-control" name="product_description" id="recipient-name"><?php echo $row['product_description'];?></textarea>
         </div>
         <div class="form-group">
             <label >Price :</label>
-            <input type="text" class="form-control" name="product_price" id="recipient-name" value="<?php echo $row['product_price'];?>">
+            <input type="number" class="form-control" name="product_price" id="recipient-name" value="<?php echo $row['product_price'];?>">
         </div>
         <div class="form-group">
             <label >Old Price :</label>
-            <input type="text" class="form-control" name="product_oldprice" id="recipient-name" value="<?php echo $row['product_oldprice'];?>">
+            <input type="number" class="form-control" name="product_oldprice" id="recipient-name" value="<?php echo $row['product_oldprice'];?>">
+        </div>
+        <div class="form-group">
+            <label >Old Price :</label>
+            <input type="number" class="form-control" name="product_quantity" id="recipient-name" value="<?php echo $row['product_quantity'];?>">
         </div>
         <div class="form-group">
             <label >Small Image 1 :</label>
@@ -94,28 +98,34 @@
 </div>
 <?php
       if(isset($_POST['submit'])){
-        $product_name = $_POST['product_name'];
-        $product_fullname = $_POST['product_fullname'];
-        $product_image = $_POST['product_image'];
-        $product_description = $_POST['product_description'];
-        $product_price = $_POST['product_price'];
-        $product_oldprice = $_POST['product_oldprice'];
-        $color1 = ($_POST['color1']);
-        $color2 = ($_POST['color2']);
-        $color3 = ($_POST['color3']);
-        $product_smallimage1 = $_POST['product_smallimage1'];
-        $product_smallimage2 = $_POST['product_smallimage2'];
-        $product_smallimage3 = $_POST['product_smallimage3'];
-        $product_smallimage4 = $_POST['product_smallimage4'];
+        $product_name = escape_string($_POST['product_name']);
+        $product_fullname = escape_string($_POST['product_fullname']);
+        $product_image = escape_string($_POST['product_image']);
+        $product_description = escape_string($_POST['product_description']);
+        $product_price = escape_string($_POST['product_price']);
+        $product_oldprice = escape_string($_POST['product_oldprice']);
+        $color1 = escape_string($_POST['color1']);
+        $color2 = escape_string($_POST['color2']);
+        $color3 = escape_string($_POST['color3']);
+        $product_smallimage1 = escape_string($_POST['product_smallimage1']);
+        $product_smallimage2 = escape_string($_POST['product_smallimage2']);
+        $product_smallimage3 = escape_string($_POST['product_smallimage3']);
+        $product_smallimage4 = escape_string($_POST['product_smallimage4']);
         $category_id = escape_string($_POST['category_id']);
         $promo = escape_string($_POST['promo']);
-        $query = "UPDATE products SET product_name='$product_name','$product_fullname', product_image='$product_image', product_description ='$product_description', product_price='$product_price', product_oldprice='$product_oldprice', product_smallimage1='$product_smallimage1', product_smallimage2='$product_smallimage2', product_smallimage3='$product_smallimage3', product_smallimage4='$product_smallimage4', color1='$color1', color2='$color2', color3='$color3', category_id='$category_id',promo='$promo' WHERE id = '$id'";
+        $query = "UPDATE products SET product_name='$product_name',product_fullname='$product_fullname',product_image='$product_image',product_description='$product_description', product_price='$product_price', product_oldprice='$product_oldprice', product_quantity='$product_quantity', product_smallimage1='$product_smallimage1', product_smallimage2='$product_smallimage2', product_smallimage3='$product_smallimage3', product_smallimage4='$product_smallimage4', color1='$color1', color2='$color2', color3='$color3', category_id='$category_id',promo='$promo' WHERE id = '$id'";
                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
-            <script type="text/javascript">
-                alert("Update Successfull.");
-                window.location = "produit.php";
-            </script>
+<script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Produit Modifier !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                      }).then(function() {
+                                        window.location = 'produit.php';
+                                    });
+                                    </script>
             <?php
              }               
 ?>

@@ -18,10 +18,16 @@
         $query = "UPDATE annance SET annance_nom = '$annance_nom', annance_image='$annance_image' WHERE id = '$id'";
                     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                     ?>
-                     <script type="text/javascript">
-            alert("Update Successfull.");
-            window.location = "annance.php";
-        </script>
+                                      <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Annance Modifie !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                      }).then(function() {
+                                        window.location = 'annance.php';
+                                    });
+                                    </script>
         <?php
              }               
 ?> 
