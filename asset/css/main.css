@@ -57,6 +57,7 @@ a {
   }
 .ca-bar {
     margin-top: 80px ;
+    margin-right: 30px;
     float: right !important;
 }
 .ca-bar a {
@@ -171,4 +172,11 @@ a {
 .footerbar img {
     padding-left: 15px;
     width: 50px;
+}
+@media only screen and (min-width: 768px) {
+.mylogo {
+    margin-left: 60px;
+    
+}
+
 }

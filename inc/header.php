@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/product.css">
     <link rel="stylesheet" href="asset/css/product-details.css">
+    <link rel="stylesheet" href="asset/css/cart.css">
 
 
 </head>
@@ -35,10 +36,8 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-dm-6 my-3 my-md-0" >
-                <div class="mylogo">
-                                <a href="/hibamall/"> <img class="" src="asset/img/logo.png" alt="Hibamall"></a>
-                </div>
+                <div class="col-md-3" >
+                <a href="/hibamall"> <div ></div> </a>
                     <!-- Header with Logo -->
                 </div>
                 <div class="col-md-6">
@@ -63,10 +62,24 @@
           if(!isset($_SESSION["username"])){
             echo ' <a href="login.php"> <i class="fa fa-user" aria-hidden="true"></i> Sign in </a>';
           }else {
-            echo '<a href="logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i>
-            Sign Out </a>';
+            echo '
+        
+      <div class="btn-group">
+  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <i class="fa fa-user" aria-hidden="true"></i> Profile
+  </a>
+  <div class="dropdown-menu">
+    <a href="/hibamall/admin/"> <i class="fa fa-user" aria-hidden="true"></i>
+    Dashboard</a>
+    <br>
+  <a href="logout.php"> <i class="fa fa-sign-out" aria-hidden="true"></i>
+    Sign Out </a>
+</div>
+
+        ';
           }
         ?>
+
 
 
                     </div>
