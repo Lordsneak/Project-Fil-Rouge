@@ -1,12 +1,5 @@
 <?php include('inc/header.php'); ?>
-<?php 
-                                    $search = isset($_POST['search']) ? escape_string($_POST['search']) : ""; 
-                                    $sql = "SELECT * FROM  products WHERE id LIKE '%$search%'
-                                                OR product_description LIKE '%$search%'";
-                                    $result = query($sql);
-                                    if($count = mysqli_num_rows($result) > 0):
-                                        while($row = fetch_array($result)):
-                                ?>
+
 <div class="menubarcategory text-left">
         <p class="category-top">
         <a href="">Home</a>
@@ -29,8 +22,16 @@
             <p class="pull-right">1/1</p>
         </div>
         <div class="row product-3 mx-auto">
+        <?php 
+                                    $search = isset($_POST['search']) ? escape_string($_POST['search']) : ""; 
+                                    $sql = "SELECT * FROM  products WHERE id LIKE '%$search%'
+                                                OR product_description LIKE '%$search%'";
+                                    $result = query($sql);
+                                    if($count = mysqli_num_rows($result) > 0):
+                                        while($row = fetch_array($result)):
+                                ?>
                       <div class="col-md-4 col-dm-6 my-3 my-md-0">      
-            
+
                       <form action="" method="post">
                         <div class="card shadow text-center">
                           <div>

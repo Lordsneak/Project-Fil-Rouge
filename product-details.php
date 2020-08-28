@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="row">
                 <div class="content-produit">
-                <form action="checkout.php" method="post">
+                
                 <h6><?php echo $row['product_fullname'];?> </h6> 
                 <label class="colors">Color Disponible :</label>
 							<span class="color" 	style="background: <?php echo $row['color1'];?>;"></span>
@@ -38,10 +38,10 @@
                     <br>
                 <h3 for="">Price : $ <?php echo $row['product_price'];?></h3>
                 <br>
-                
+                <form action="checkout.php" method="post">
                     <div class="form-group">
                         <label for="qte">QTY :</label>
-                        <input type="number" name="qte"  class="form-control w-75" min="1" max="5" value="1">
+                        <input type="number" name="qte"  class="form-control w-75" min="1" value="1">
                         <input type="hidden" name="product" value="<?php echo $row['product_title'];?>">
                         <input type="hidden" name="id" value="<?php echo $row['id'];?>">
                     </div>

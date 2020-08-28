@@ -6,12 +6,12 @@ if(isset($_POST['id']) && isset($_POST['qte'])){
     $sql = "SELECT * FROM products WHERE id = '$id'";
     $result = query($sql);
     $product = fetch_array($result);
-    if($_SESSION['products_'.$id]['product'] == $_POST['product']){
+    if($_SESSION['products_'.$id]['product'] == $product['product_name']){
         $message = "Vous avez déja ajouté ce produit à votre panier";
         redirect("cart.php?message=".$message);
     }else{
         if($product['product_quantity'] < $qte){
-            $message = "la quantité disponible en stock est : ".$product['product_quantity'];
+            $message = "la QTY disponible en stock est : ".$product['product_quantity'];
             redirect("cart.php?message=".$message);
         }else{
             $_SESSION['products_'.$product['id']] = array(

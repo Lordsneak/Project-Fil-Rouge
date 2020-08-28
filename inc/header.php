@@ -26,8 +26,8 @@
                     <div class="col-md-12">
                         <div class="track-order pull-right">
                             <ul>
-                                <a href="">Track Order</a>
-                                <a href="">Help Center</a>
+                                <a href="https://www.17track.net/">Track Order</a>
+                                <a href="contact.php">Help Center</a>
                             </ul>
                         </div>
                     </div>
