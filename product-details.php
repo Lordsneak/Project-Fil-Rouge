@@ -28,24 +28,26 @@
             </div>
             <div class="col-md-12">
                 <div class="row">
-                    <form action="">
                 <div class="content-produit">
+                <form action="checkout.php" method="post">
                 <h6><?php echo $row['product_fullname'];?> </h6> 
-                <label class="colors">Select Color :</label>
+                <label class="colors">Color Disponible :</label>
 							<span class="color" 	style="background: <?php echo $row['color1'];?>;"></span>
 							<span class="color" 	style="background: <?php echo $row['color2'];?>; "></span>
                             <span class="color"  	style="background: <?php echo $row['color3'];?>; "></span>
-            <select class="form-control w-50" name="color" id="exampleFormControlSelect1">
-
-                <option><?php echo $row['color1'];?></option>
-                <option><?php echo $row['color2'];?></option>
-                <option><?php echo $row['color3'];?></option>
-            </select>
-                <label>QTY : <input class="input-group w-75" type="number" min="1" max="5"> </label>
+                    <br>
+                <h3 for="">Price : $ <?php echo $row['product_price'];?></h3>
                 <br>
-                <h6 for="">Price : $ <?php echo $row['product_price'];?></h6>
-                <a href=""><button class="btn btn-transparent border-dark"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp; Add to cart</button></a>
-                <a href=""><button class="btn btn-primary border-dark"> <i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp; Buy Now</button></a>
+                
+                    <div class="form-group">
+                        <label for="qte">QTY :</label>
+                        <input type="number" name="qte"  class="form-control w-75" min="1" max="5" value="1">
+                        <input type="hidden" name="product" value="<?php echo $row['product_title'];?>">
+                        <input type="hidden" name="id" value="<?php echo $row['id'];?>">
+                    </div>
+                    <button type="submit" class="btn btn-transparent border-dark"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp; Add to cart</button>
+                </form>
+
                 <hr>
                 <h6>Paymant : <i class="fa fa-paypal" aria-hidden="true"></i> &nbsp; Paypal</h6>
                 <br>
@@ -55,7 +57,6 @@
                 <p> </p>
             </div>
                     </div>
-                    </form>
                     <div class="smallimage">
                         <h6>More Images</h6>
                 <a href="<?php echo $row['product_smallimage1'];?>"> <img class="border border-dark" src="<?php echo $row['product_smallimage1'];?>" alt="" srcset=""></a>

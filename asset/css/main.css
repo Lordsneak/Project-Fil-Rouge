@@ -1,7 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: #F6F4F4;
-    position: relative;
     font-weight: 400px;
     margin:0;
     overflow-x: hidden;
@@ -173,10 +172,12 @@ a {
     padding-left: 15px;
     width: 50px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
 .mylogo {
-    margin-left: 60px;
-    
+width: 100%;
+}
+.ca-bar{
+    margin-right: 40px;
 }
 
 }

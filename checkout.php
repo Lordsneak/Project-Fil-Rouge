@@ -1,5 +1,5 @@
 <?php 
-require('includes/functions.php');
+require('inc/fonctions.php');
 if(isset($_POST['id']) && isset($_POST['qte'])){
     $id = escape_string($_POST['id']);
     $qte = escape_string($_POST['qte']);
@@ -16,7 +16,7 @@ if(isset($_POST['id']) && isset($_POST['qte'])){
         }else{
             $_SESSION['products_'.$product['id']] = array(
                 'id'=>$product['id'],
-                'product'=>$product['product_title'],
+                'product'=>$product['product_name'],
                 'price'=>$product['product_price'],
                 'qte'=> $qte,
                 'total'=> $product['product_price'] * $qte,

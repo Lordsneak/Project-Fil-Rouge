@@ -36,8 +36,8 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3" >
-                <a href="/hibamall"> <div ></div> </a>
+                <div class="col-md-3 col-dm-6 my-3 my-md-0" >
+                <a href="/hibamall"> <img class="mylogo" src="asset/img/logo.png" alt="Hibamall"></a>
                     <!-- Header with Logo -->
                 </div>
                 <div class="col-md-6">
@@ -56,7 +56,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i> Cart </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="cart.php"> <a class="nav-link" href="products.php">Produits <span class="sr-only">(current)</span></a> </a> 
+                        <a class="dropdown-item" href="cart.php"> <?php echo !empty($_SESSION['count']) ? $_SESSION['count'] : 0?> produit(s)</a>
                         </div>
                         <?php
           if(!isset($_SESSION["username"])){

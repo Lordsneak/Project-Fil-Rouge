@@ -10,7 +10,7 @@
                                     $_SESSION['logged'] = true;
                                     $_SESSION['username'] = $user['username'];
                                     $_SESSION['id'] = $user['id'];
-                                    redirect("admin/index.php");
+                                    redirect("index.php");
                                 }else{
                                     echo '<div class="alert alert-danger mt-2">Incorrect username or password. </div>';
                                 }
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-md-12 col-xl-5 col-lg-6 col-sm-10 mx-auto text-center form p-4">
             <div class="d-flex justify-content-center">
-                <a href=""><img class="card-1" src="asset/img/logo.png" alt="" srcset=""></a>
+                <a href="index.php"><img class="card-1" src="asset/img/logo.png" alt="" srcset=""></a>
             </div>
           </div>
         </div>
