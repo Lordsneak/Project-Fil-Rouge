@@ -1,4 +1,10 @@
 <?php include('inc/fonctions.php'); ?>
+<?php
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+    exit();
+  }
+?>
 <?php 
                             if(isset($_POST['register'])){
                                 $username = escape_string($_POST['username']);
