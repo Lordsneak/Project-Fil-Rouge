@@ -7,7 +7,7 @@
                 	?>
 <div class="menubarcategory text-left">
         <p class="category-top">
-        <a href="">Home</a>
+        <a href="/hibamall">Home</a>
         </p>
         <p>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
