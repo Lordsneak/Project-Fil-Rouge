@@ -15,7 +15,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mx-auto">
                     <section class="promotion border">
                         <h5> <img src="asset/img/icons8-shopping-cart-promotion-64.png" > Promotion Products <a href="promotion.php">View More</a></h5>
                     </section>
@@ -32,7 +32,7 @@
                       <form action="" method="post">
                         <div class="card shadow text-center">
                           <div>
-                            <img src="<?php echo $row['product_image'];?>" class="product-img img-fluid card-img-top" alt="" srcset="">
+                            <a href="product-details.php?id=<?php echo $row['id'];?>"><img src="<?php echo $row['product_image'];?>" class="product-img img-fluid card-img-top" alt="" srcset=""></a>
                           </div>
                           <div class="card-body h-100">
                             <h6 class="card-title"><?php echo $row['product_name'];?></h6>
@@ -67,8 +67,7 @@
               </div>
 
                 <!-- start .. -->
-                <div class="container">
-                  <div class="row">
+
                       <div class="col-md-12">
                           <section class="promotion border">
                               <h5> <img src="asset/img/icons8-shopping-cart-promotion-64.png" > Products <a href="products.php">View More</a></h5>
@@ -88,7 +87,7 @@
                       <form action="" method="post">
                         <div class="card shadow text-center">
                           <div>
-                            <img src="<?php echo $row['product_image'];?>" class="product-img img-fluid card-img-top" alt="" srcset="">
+                            <a href="product-details.php?id=<?php echo $row['id'];?>"><img src="<?php echo $row['product_image'];?>" class="product-img img-fluid card-img-top" alt="" srcset=""></a>
                           </div>
                           <div class="card-body h-100">
                             <h6 class="card-title"><?php echo $row['product_name'];?></h6>
@@ -117,6 +116,4 @@
                                 endwhile;
                             ?>
                   </div> 
-      </div>
-    </div>
     <?php include('inc/footer.php'); ?>
